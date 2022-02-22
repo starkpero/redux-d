@@ -11,6 +11,8 @@ function App() {
   const counter = useSelector((state)=>state?.counter)
   //console.log(counter);
   console.log("changes  in feature branch");
+  console.log(counter);
+  console.log("added changes in master 'm2'");
   return (
     
     <div className="App">
