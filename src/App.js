@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+//useSelector is used to select piece of state from store and use it in our component
+//useDispatch is used to dispatch an action
+import {useDispatch, useSelector} from 'react-redux';
+//import actions
+import {decrement, increment, increaseAmount} from './redux/slices/counterSlices'
+import { compose } from '@reduxjs/toolkit';
 
 function App() {
+  const dispatch = useDispatch()
+  const counter = useSelector((state)=>state?.counter)
+  console.log(counter);
   return (
+    
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello</h1>  
+      <h2>Counter: {counter?.value}</h2>
+      <button onClick= {()=>{dispatch(increment())}}>+</button>
+      <button onClick= {()=>{dispatch(decrement())}}>-</button>
+      <button onClick= {()=>{dispatch(increaseAmount(20))}}>Increase Amount</button>
     </div>
   );
 }
