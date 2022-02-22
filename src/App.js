@@ -10,6 +10,7 @@ function App() {
   const dispatch = useDispatch()
   const counter = useSelector((state)=>state?.counter)
   console.log(counter);
+  console.log("added changes in master 'm2'");
   return (
     
     <div className="App">
